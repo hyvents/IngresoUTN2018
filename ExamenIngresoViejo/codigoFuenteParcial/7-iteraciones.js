@@ -2,41 +2,48 @@
 function Mostrar()
 {
     var nota;
+    var minima=0;
+    var suma=0;
     var sexo;
+    var cantvar=0;
+    var i=0;
     var promedio;
-    var notamenor=0;
-    var cantvaro=0;
-    var i=1;
-    var acum=0;
 
-    for(i=1;i<=6;i++)
+    while(i<=6)
     {
+        i++
         nota=parseInt(prompt("ingrese nota"));
-        if(nota<0 || nota>10)
+        if(nota<0 || nota>11)
         {
-            i-1;
+            i--;
+            alert("error volver a ingresar numero");
+            continue;
+
+        }
+        sexo=prompt("ingrese sexo");
+        if(sexo!="m" && sexo!="f")
+        {
+            i--;
+            alert("error, volver a ingresar numero y sexo");
             continue;
         }
-        sexo=prompt("ingresar sexo f o m");
-        if(sexo != "m" && sexo!="f")
+        suma=suma+nota;
+        if(nota<minima || i==1)
         {
-            i-1;
-            continue;
-        }
-        if(nota<notamenor || i==1)
-        {
-            notamenor=nota;
+            minima=nota;
         }
         if(nota>=6 && sexo=="m")
         {
-            cantvaro++;
+            cantvar++;
         }
-        acum=acum+nota;
     }
-    promedio=acum/i;
-    document.write(notamenor);
-    document.write(cantvaro);
-    document.write(promedio);
+    promedio=suma/i;
+    alert("el promedio es: "+promedio);
+    alert("la nota es mas baja :" +minima);
+    alert("cantidad de varones aprobados :" +cantvar);
+
+
+    
 	
 }
 

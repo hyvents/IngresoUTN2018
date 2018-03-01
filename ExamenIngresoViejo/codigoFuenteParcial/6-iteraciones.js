@@ -6,10 +6,12 @@ function Mostrar()
     var precio;
     var menor=0;
     var mayor=0;
+    
 
     for(i=1;i<=7;i++)
     {
         precio=prompt("ingrese el precio");
+       
         if(precio>i || i==1)
         {
             mayor=precio;
@@ -20,7 +22,7 @@ function Mostrar()
         }
 
     }
-    alert("mayor es :"+mayor+"menor es :" +menor );
+    alert("mayor es : "+mayor+"       menor es :" +menor );
 	
 }
 
